@@ -117,9 +117,7 @@ test("Calculates the number of matches won by each team per year correctly", () 
         "Gujarat Lions": 4,
       },
     };
-    // Add expected results for other years as needed
 
-    // Check if the calculated result matches the expected result
     expect(result).toEqual(expectedOutput);
   });
 });

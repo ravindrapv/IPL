@@ -12,6 +12,5 @@ test("Calculates best economy in super overs correctly", async () => {
 
   const expectedOutput = ["JJ Bumrah", 1.5];
 
-  // Check if the calculated result matches the expected result
   expect(result).toEqual(expectedOutput);
 });

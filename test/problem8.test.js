@@ -1754,7 +1754,5 @@ test("Calculates dismissal stats correctly", async () => {
       count: 1,
     },
   };
-
-  // Check if the calculated result matches the expected result
   expect(result).toEqual(expectedOutput);
 });

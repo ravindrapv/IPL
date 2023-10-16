@@ -28,6 +28,5 @@ test("Calculates top 10 economical bowlers in 2015 correctly", async () => {
     "MA Starc": 6.0661764705882355,
     "Parvez Rasool": 6.200000000000001,
   };
-  // Check if the calculated result matches the expected result
   expect(result).toEqual(expectedOutput);
 });

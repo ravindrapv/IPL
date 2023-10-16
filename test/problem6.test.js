@@ -52,7 +52,5 @@ test("Finds players with the most Player of the Match awards for each season cor
       count: 3,
     },
   };
-
-  // Check if the calculated result matches the expected result
   expect(result).toEqual(expectedOutput);
 });

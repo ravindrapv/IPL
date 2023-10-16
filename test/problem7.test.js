@@ -1500,7 +1500,5 @@ test("Calculates batsman strike rates for each season correctly", async () => {
       "AS Rajpoot": 400,
     },
   };
-
-  // Check if the calculated result matches the expected result
   expect(result).toEqual(expectedOutput);
 });

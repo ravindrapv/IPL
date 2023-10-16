@@ -11,7 +11,6 @@ function calculateBatsmanStrikeRate(matchesData, deliveriesData) {
 
       if (runs) {
         batsmanStats[season] = batsmanStats[season] || {};
-
         batsmanStats[season][batsman] = batsmanStats[season][batsman] || {
           runs: 0,
           balls: 0,

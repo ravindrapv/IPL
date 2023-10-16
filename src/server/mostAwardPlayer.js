@@ -1,16 +1,16 @@
 function findMostPOTMAwardsPerSeason(matchesData) {
-  const seasonPlayerOfMatch = matchesData.reduce((accumulator, current) => {
-    if (accumulator[current.season]) {
-      if (accumulator[current.season][current.player_of_match]) {
-        accumulator[current.season][current.player_of_match]++;
+  const seasonPlayerOfMatch = matchesData.reduce((ac, cv) => {
+    if (ac[cv.season]) {
+      if (ac[cv.season][cv.player_of_match]) {
+        ac[cv.season][cv.player_of_match]++;
       } else {
-        accumulator[current.season][current.player_of_match] = 1;
+        ac[cv.season][cv.player_of_match] = 1;
       }
     } else {
-      accumulator[current.season] = {};
-      accumulator[current.season][current.player_of_match] = 1;
+      ac[cv.season] = {};
+      ac[cv.season][cv.player_of_match] = 1;
     }
-    return accumulator;
+    return ac;
   }, {});
 
   const mostPOTMAwardsPerSeason = Object.fromEntries(

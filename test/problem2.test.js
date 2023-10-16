@@ -25,8 +25,6 @@ test("Calculates extra runs conceded in 2016 correctly", () => {
         "Sunrisers Hyderabad": 107,
         "Royal Challengers Bangalore": 156,
       };
-
-      // Check if the calculated result matches the expected result
       expect(result).toEqual(expectedOutput);
     }
   );

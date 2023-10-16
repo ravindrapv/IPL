@@ -68,6 +68,5 @@ test("Finds teams that won the toss and the match for each season correctly", as
       matchWins: 3,
     },
   };
-  // Check if the calculated result matches the expected result
   expect(result).toEqual(expectedOutput);
 });
