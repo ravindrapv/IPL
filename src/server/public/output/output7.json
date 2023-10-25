@@ -1,0 +1,42 @@
+{
+  "2008": {
+    "batsman": "VRV Singh",
+    "strikeRate": 400
+  },
+  "2009": {
+    "batsman": "MS Gony",
+    "strikeRate": 433.3333333333333
+  },
+  "2010": {
+    "batsman": "SP Goswami",
+    "strikeRate": 400
+  },
+  "2011": {
+    "batsman": "AUK Pathan",
+    "strikeRate": 412.5
+  },
+  "2012": {
+    "batsman": "BA Bhatt",
+    "strikeRate": 600
+  },
+  "2013": {
+    "batsman": "PJ Sangwan",
+    "strikeRate": 400
+  },
+  "2014": {
+    "batsman": "TG Southee",
+    "strikeRate": 400
+  },
+  "2015": {
+    "batsman": "VR Aaron",
+    "strikeRate": 600
+  },
+  "2016": {
+    "batsman": "CR Brathwaite",
+    "strikeRate": 360.8695652173913
+  },
+  "2017": {
+    "batsman": "AS Rajpoot",
+    "strikeRate": 400
+  }
+}

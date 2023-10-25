@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	fetch('./output/1.json')
+	fetch('./output/output1.json')
 		.then((response) => response.json())
 		.then((data) => {
 			Highcharts.chart('chartContainer', {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-	fetch('./output/2.json')
+	fetch('./output/output2.json')
 		.then((response) => response.json())
 		.then((data) => {
 			Highcharts.chart('matchesWonPerTeamPerYearContainer', {
@@ -73,10 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 });
 
-fetch('./output/3.json')
+fetch('./output/output3.json')
 	.then((response) => response.json())
 	.then((data) => {
-		// Visualize the data using Highcharts
 		Highcharts.chart('extraRunsConcededContainer', {
 			chart: {
 				type: 'column',
@@ -108,13 +107,9 @@ fetch('./output/3.json')
 		console.error('Error fetching data:', error);
 	});
 
-// Existing code for "Matches Won Per Team Per Year" and "Extra Runs Conceded in 2016"
-
-// Add the code to calculate "Top Economical Bowlers in 2015"
-fetch('./output/4.json')
+fetch('./output/output4.json')
 	.then((response) => response.json())
 	.then((data) => {
-		// Visualize the data using Highcharts
 		Highcharts.chart('topEconomicalBowlersContainer', {
 			chart: {
 				type: 'bar',
@@ -146,10 +141,7 @@ fetch('./output/4.json')
 		console.error('Error fetching data:', error);
 	});
 
-// Existing code for "Matches Won Per Team Per Year", "Extra Runs Conceded in 2016", and "Top Economical Bowlers in 2015"
-
-// Add the code to calculate "Teams' Toss and Match Wins"
-fetch('./output/5.json')
+fetch('./output/output5.json')
 	.then((response) => response.json())
 	.then((data) => {
 		// Visualize the data using Highcharts
@@ -192,13 +184,9 @@ fetch('./output/5.json')
 		console.error('Error fetching data:', error);
 	});
 
-// Existing code for "Matches Won Per Team Per Year", "Extra Runs Conceded in 2016", "Top Economical Bowlers in 2015", and "Teams' Toss and Match Wins"
-
-// Add the code to calculate "Most Player of the Match (POTM) Awards per Season"
-fetch('./output/6.json')
+fetch('./output/output6.json')
 	.then((response) => response.json())
 	.then((data) => {
-		// Visualize the data using Highcharts
 		Highcharts.chart('mostPOTMAwardsContainer', {
 			chart: {
 				type: 'column',
@@ -230,20 +218,20 @@ fetch('./output/6.json')
 		console.error('Error fetching data:', error);
 	});
 
-// Existing code for "Matches Won Per Team Per Year," "Extra Runs Conceded in 2016," "Top Economical Bowlers in 2015," "Teams' Toss and Match Wins," and "Most Player of the Match (POTM) Awards per Season"
-
-// Add the code to calculate "Batsman Strike Rate per Season"
-fetch('./output/7.json')
+fetch('./output/output7.json')
 	.then((response) => response.json())
 	.then((data) => {
-		// Visualize the data using Highcharts
 		const categories = Object.keys(data);
-		const batsmanNames = Object.keys(data[Object.keys(data)[0]]);
+		const seriesData = [];
+		categories.forEach((year) => {
+			const batsmanName = data[year].batsman;
+			const strikeRate = data[year].strikeRate;
 
-		const seriesData = batsmanNames.map((batsman) => ({
-			name: batsman,
-			data: categories.map((year) => data[year][batsman]),
-		}));
+			seriesData.push({
+				name: year,
+				data: [strikeRate],
+			});
+		});
 
 		Highcharts.chart('batsmanStrikeRateContainer', {
 			chart: {
@@ -271,51 +259,50 @@ fetch('./output/7.json')
 		console.error('Error fetching data:', error);
 	});
 
-// Existing code for "Matches Won Per Team Per Year," "Extra Runs Conceded in 2016," "Top Economical Bowlers in 2015," "Teams' Toss and Match Wins," "Most Player of the Match (POTM) Awards per Season," and "Batsman Strike Rate per Season"
-
-// Add the code to calculate "Dismissal Stats"
-fetch('./output/8.json')
+fetch('./output/output8.json')
 	.then((response) => response.json())
 	.then((data) => {
-		// Visualize the data using Highcharts
-		const categories = Object.keys(data);
-		const batsmanNames = Object.keys(data[Object.keys(data)[0]]);
-
-		const seriesData = batsmanNames.map((batsman) => ({
-			name: batsman,
-			data: categories.map((year) => data[year][batsman].count),
+		// Extract the data from the JSON
+		const chartData = data.map((dataPoint) => ({
+			name: `${dataPoint.batsman} vs ${dataPoint.bowler}`,
+			count: dataPoint.count,
 		}));
 
+		// Create a Highcharts bar chart
 		Highcharts.chart('dismissalStatsContainer', {
 			chart: {
-				type: 'column',
+				type: 'bar',
 			},
 			title: {
 				text: 'Dismissal Stats',
 			},
 			xAxis: {
-				categories: categories,
+				categories: chartData.map((dataPoint) => dataPoint.name),
 				title: {
-					text: 'Bowler',
+					text: 'Batsman vs Bowler',
 				},
 			},
 			yAxis: {
 				min: 0,
 				title: {
-					text: 'Dismissals',
+					text: 'Dismissal Count',
 				},
 			},
-			series: seriesData,
+			series: [
+				{
+					name: 'Dismissal Count',
+					data: chartData.map((dataPoint) => dataPoint.count),
+				},
+			],
 		});
 	})
 	.catch((error) => {
 		console.error('Error fetching data:', error);
 	});
 
-fetch('./output/9.json')
+fetch('./output/output9.json')
 	.then((response) => response.json())
 	.then((data) => {
-		// Visualize the data using Highcharts
 		const bestEconomyData = {
 			'Best Economy in Super Overs': data[1],
 		};
