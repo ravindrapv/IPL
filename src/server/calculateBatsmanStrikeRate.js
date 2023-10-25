@@ -21,24 +21,26 @@ function calculateHighestBatsmanStrikeRate(matchesData, deliveriesData) {
 			}
 		});
 
-	const highestStrikeRate = {
-		batsman: null,
-		strikeRate: 0,
-	};
+	const highestStrikeRates = {};
 
 	for (const season in batsmanStats) {
+		highestStrikeRates[season] = {
+			batsman: null,
+			strikeRate: 0,
+		};
+
 		Object.keys(batsmanStats[season]).forEach((batsman) => {
 			const { runs, balls } = batsmanStats[season][batsman];
 			const strikeRateValue = (runs / balls) * 100;
 
-			if (strikeRateValue > highestStrikeRate.strikeRate) {
-				highestStrikeRate.batsman = batsman;
-				highestStrikeRate.strikeRate = strikeRateValue;
+			if (strikeRateValue > highestStrikeRates[season].strikeRate) {
+				highestStrikeRates[season].batsman = batsman;
+				highestStrikeRates[season].strikeRate = strikeRateValue;
 			}
 		});
 	}
 
-	return highestStrikeRate;
+	return highestStrikeRates;
 }
 
 module.exports = { calculateHighestBatsmanStrikeRate };
