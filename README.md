@@ -1,63 +1,28 @@
-# IPL Data Analysis Project
+# Data Visualization Project README
 
-This project allows you to perform data analysis on Indian Premier League (IPL) cricket matches and deliveries data. It includes several functions to extract valuable insights from the IPL dataset.
+This project contains data visualization using Highcharts. You can view the data visualization by following the steps below.
 
-## How to Run
+## Prerequisites
 
-Follow these steps to run the project:
+- Node.js and npm should be installed on your computer.
 
-1. Clone the repository to your local machine:
+## How to Access Data Visualization
 
+1. Navigate to the `src/server/public` directory in your project.
 
-2. Install the required dependencies using npm:
+2. In this directory, you will find an `index.html` file.
 
+3. Right-click on the `index.html` file.
 
-3. Run the project:
+4. Choose to open the file with a live server extension or tool of your choice. For example, you can use the "Live Server" extension in Visual Studio Code or any other live server tool that you prefer.
 
-4. You can specify which analysis to run by changing the `problemNumber` variable in `src/main.js`. The available problem numbers are from 1 to 9.
+5. The live server will open the `index.html` file in your default web browser.
 
-## Usage
+6. The data visualization will be displayed in your web browser using Highcharts. You can interact with the visualization to explore the data.
 
-### Problem 1: Calculate Matches Per Year
+7. Enjoy exploring the data visualization!
 
-This function calculates the number of matches played in each IPL season and writes the result to a JSON file.
+If you don't have a live server extension or tool, you can also use a local development server to serve the `index.html` file. Simply open your terminal, navigate to the `src/server/public` directory, and start a local server. For example, you can use the following command:
 
-### Problem 2: Calculate Extra Runs Conceded in 2016
-
-This function calculates the extra runs conceded by each team in the year 2016 and writes the result to a JSON file.
-
-### Problem 3: Calculate Top Economical Bowlers in 2015
-
-This function identifies and ranks the top 10 economical bowlers in the year 2015 and writes the result to a JSON file.
-
-### Problem 4: Calculate Matches Won Per Team Per Year
-
-This function determines the number of matches won by each team in each IPL season and writes the result to a JSON file.
-
-### Problem 5: Find Teams That Won the Toss and Match
-
-This function identifies the teams that won both the toss and the match for each season and writes the result to a JSON file.
-
-### Problem 6: Find Players With the Most Player of the Match Awards
-
-This function identifies the player with the most Player of the Match awards for each IPL season and writes the result to a JSON file.
-
-### Problem 7: Calculate Batsman Strike Rate
-
-This function calculates the strike rate of batsmen for each season and writes the result to a JSON file.
-
-### Problem 8: Find the Number of Times a Player Was Dismissed by Another Player
-
-This function identifies the number of times one player has been dismissed by another player and writes the result to a JSON file.
-
-### Problem 9: Find the Bowler With the Best Economy in Super Overs
-
-This function identifies the bowler with the best economy rate in super overs and writes the result to a JSON file.
-
-You can run each of these analyses individually by specifying the corresponding problem number in `src/main.js`.
-
-## Contributing
-
-If you'd like to contribute to this project, feel free to open an issue or create a pull request with your changes.
-
-
+```bash
+npx http-server
