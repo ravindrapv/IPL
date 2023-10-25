@@ -1,0 +1,28 @@
+{
+  "name": "ipl",
+  "version": "1.0.0",
+  "description": "This project allows you to perform data analysis on Indian Premier League (IPL) cricket matches and deliveries data. It includes several functions to extract valuable insights from the IPL dataset.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravindrapv/IPL.git"
+  },
+  "author": "ravindra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravindrapv/IPL/issues"
+  },
+  "homepage": "https://github.com/ravindrapv/IPL#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10"
+  }
+}
