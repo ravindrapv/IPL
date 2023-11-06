@@ -8,6 +8,7 @@ This project contains data visualization using Highcharts. You can view the data
 
 ## How to Access Data Visualization
 
+0.Clone the Git repository to your local machine and navigate to the project's directory git checkout webapp-2.
 1. Navigate to the `src/server/public` directory in your project.
 
 2. In this directory, you will find an `index.html` file.
